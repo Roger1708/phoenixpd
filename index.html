@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sKora PD — Knowledge Base</title>
+<title>Phoenix PD — Knowledge Base</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════
@@ -15,31 +15,49 @@
   --blue-200:#B5D4F4;--blue-100:#D9EBFB;--blue-50:#EEF6FD;
 }
 
-/* ── DARK BASE (blue default) ── */
+/* ── DARK BASE (orange default) ── */
 [data-theme="dark"] {
+  --bg-primary:#130C07;--bg-secondary:#1C1209;--bg-card:#21150B;
+  --bg-card-hover:#2B1B0E;--border:rgba(249,115,22,0.18);
+  --border-hover:rgba(249,115,22,0.45);--text-primary:#FFF4EA;
+  --text-secondary:#D9A274;--text-muted:#8A5A30;--accent:#F97316;
+  --accent-bright:#FB923C;--accent-glow:rgba(249,115,22,0.14);
+  --header-bg:rgba(19,12,7,0.95);--scan-line:rgba(249,115,22,0.03);
+  --danger:rgba(220,60,60,0.15);--danger-border:rgba(220,60,60,0.35);
+  --danger-text:#f87171;--success:rgba(45,180,130,0.12);
+  --success-border:rgba(45,180,130,0.35);--success-text:#2DD4AA;
+  --warn:rgba(186,117,23,0.1);--warn-border:rgba(186,117,23,0.3);--warn-text:#BA7517;
+}
+/* ── LIGHT BASE (orange default) ── */
+[data-theme="light"] {
+  --bg-primary:#FFF7ED;--bg-secondary:#FFEDD5;--bg-card:#FFFFFF;
+  --bg-card-hover:#FFF7ED;--border:rgba(194,65,12,0.15);
+  --border-hover:rgba(194,65,12,0.4);--text-primary:#431407;
+  --text-secondary:#C2410C;--text-muted:#FB923C;--accent:#C2410C;
+  --accent-bright:#EA580C;--accent-glow:rgba(194,65,12,0.08);
+  --header-bg:rgba(255,247,237,0.95);--scan-line:rgba(194,65,12,0.02);
+  --danger:rgba(220,60,60,0.08);--danger-border:rgba(220,60,60,0.25);
+  --danger-text:#b91c1c;--success:rgba(45,180,130,0.08);
+  --success-border:rgba(45,180,130,0.25);--success-text:#0f766e;
+  --warn:rgba(186,117,23,0.06);--warn-border:rgba(186,117,23,0.2);--warn-text:#92400e;
+}
+
+/* ── BLUE THEME ── */
+[data-theme="dark"][data-colour="blue"] {
   --bg-primary:#080E17;--bg-secondary:#0D1A27;--bg-card:#111E2D;
   --bg-card-hover:#152537;--border:rgba(55,138,221,0.18);
   --border-hover:rgba(55,138,221,0.45);--text-primary:#E8F1FA;
   --text-secondary:#8BAFD4;--text-muted:#4A6A8A;--accent:#378ADD;
   --accent-bright:#5FA3E8;--accent-glow:rgba(55,138,221,0.15);
   --header-bg:rgba(8,14,23,0.95);--scan-line:rgba(55,138,221,0.03);
-  --danger:rgba(220,60,60,0.15);--danger-border:rgba(220,60,60,0.35);
-  --danger-text:#f87171;--success:rgba(45,180,130,0.12);
-  --success-border:rgba(45,180,130,0.35);--success-text:#2DD4AA;
-  --warn:rgba(186,117,23,0.1);--warn-border:rgba(186,117,23,0.3);--warn-text:#BA7517;
 }
-/* ── LIGHT BASE (blue default) ── */
-[data-theme="light"] {
+[data-theme="light"][data-colour="blue"] {
   --bg-primary:#F0F6FC;--bg-secondary:#E2EDF8;--bg-card:#FFFFFF;
   --bg-card-hover:#EEF6FD;--border:rgba(24,95,165,0.15);
   --border-hover:rgba(24,95,165,0.4);--text-primary:#042C53;
   --text-secondary:#185FA5;--text-muted:#5FA3E8;--accent:#185FA5;
   --accent-bright:#378ADD;--accent-glow:rgba(24,95,165,0.08);
   --header-bg:rgba(240,246,252,0.95);--scan-line:rgba(24,95,165,0.02);
-  --danger:rgba(220,60,60,0.08);--danger-border:rgba(220,60,60,0.25);
-  --danger-text:#b91c1c;--success:rgba(45,180,130,0.08);
-  --success-border:rgba(45,180,130,0.25);--success-text:#0f766e;
-  --warn:rgba(186,117,23,0.06);--warn-border:rgba(186,117,23,0.2);--warn-text:#92400e;
 }
 
 /* ── BLACK / WHITE THEME ── */
@@ -204,7 +222,7 @@ header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-fi
 .div-card.locked::before{display:none;}
 .card-num{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text-muted);letter-spacing:.15em;}
 .card-icon-wrap{width:36px;height:36px;border:1px solid var(--border);border-radius:4px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
-.div-card:hover:not(.locked) .card-icon-wrap{border-color:var(--border-hover);background:rgba(55,138,221,.12);}
+.div-card:hover:not(.locked) .card-icon-wrap{border-color:var(--border-hover);background:var(--accent-glow);}
 .card-icon-wrap svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 .card-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-primary);line-height:1.2;transition:color .2s;}
 .div-card:hover:not(.locked) .card-title{color:var(--accent-bright);}
@@ -385,8 +403,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
 ═══════════════════════════════════════ -->
 <div id="view-login" class="view active">
     <div class="login-card">
-      <img src="https://i.ibb.co/VWRCzt4Z/ffbf4ec0848acb2cff41d5686c8c8efd.webp" class="login-badge" alt="sKora PD Logo" style="object-fit:contain;border-radius:6px;">
-      <div class="login-title">sKora Police</div>
+      <img src="https://i.ibb.co/VWRCzt4Z/ffbf4ec0848acb2cff41d5686c8c8efd.webp" class="login-badge" alt="Phoenix PD Logo" style="object-fit:contain;border-radius:6px;">
+      <div class="login-title">Phoenix Police</div>
       <div class="login-sub">Knowledge Base · Authorised Access Only</div>
 
       <!-- STEP 1: CSN -->
@@ -456,9 +474,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
   <!-- HEADER -->
   <header>
     <div class="header-left">
-      <img src="https://i.ibb.co/VWRCzt4Z/ffbf4ec0848acb2cff41d5686c8c8efd.webp" class="badge-icon" alt="sKora PD Logo" style="object-fit:contain;border-radius:4px;">
+      <img src="https://i.ibb.co/VWRCzt4Z/ffbf4ec0848acb2cff41d5686c8c8efd.webp" class="badge-icon" alt="Phoenix PD Logo" style="object-fit:contain;border-radius:4px;">
       <div>
-        <div class="header-title" style="cursor:pointer;" onclick="showMain()">sKora Police Dept</div>
+        <div class="header-title" style="cursor:pointer;" onclick="showMain()">Phoenix Police Dept</div>
         <div class="header-subtitle">Knowledge Base</div>
       </div>
     </div>
@@ -500,6 +518,10 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       <div class="settings-section">
         <div class="settings-section-label">Colour Theme</div>
         <div class="colour-swatches">
+          <div class="swatch" id="swatch-orange" onclick="setColour('orange')">
+            <div class="swatch-dot" style="background:linear-gradient(135deg,#7c2d12,#fb923c);"></div>
+            <span class="swatch-label">Orange</span>
+          </div>
           <div class="swatch" id="swatch-blue" onclick="setColour('blue')">
             <div class="swatch-dot" style="background:linear-gradient(135deg,#0C447C,#5FA3E8);"></div>
             <span class="swatch-label">Blue</span>
@@ -534,7 +556,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
     <div class="dashboard">
       <div class="dash-hero">
         <div class="dash-tag">Restricted — Authorised Personnel Only</div>
-        <h1 class="dash-h1">sKora <span>Police Dept</span></h1>
+        <h1 class="dash-h1">Phoenix <span>Police Dept</span></h1>
         <div class="dash-divider"></div>
         <p class="dash-desc">Official guidelines, protocols, and divisional regulations. Your access level is determined by your assigned role.</p>
       </div>
@@ -562,7 +584,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         </div>
       </div>
     </div>
-    <footer><div class="footer-left">sKora PD Knowledge Base · Internal Use Only</div><div class="footer-right"><div class="status-dot"></div>Firebase Sync Active</div></footer>
+    <footer><div class="footer-left">Phoenix PD Knowledge Base · Internal Use Only</div><div class="footer-right"><div class="status-dot"></div>Firebase Sync Active</div></footer>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -575,9 +597,9 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       <div class="dashboard">
         <div class="dash-hero" style="padding-top:1.5rem;">
           <div class="dash-tag">Basic Policing</div>
-          <h1 class="dash-h1">sKora <span>Handbook</span></h1>
+          <h1 class="dash-h1">Phoenix <span>Handbook</span></h1>
           <div class="dash-divider"></div>
-          <p class="dash-desc">UK legislation, force guidelines, codes of ethics and operational standards for all sKora officers.</p>
+          <p class="dash-desc">UK legislation, force guidelines, codes of ethics and operational standards for all Phoenix officers.</p>
         </div>
         <div class="section-label">Handbook Index</div>
         <div class="div-grid">
@@ -763,7 +785,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         <div style="display:flex;gap:8px;margin-bottom:1.75rem;"><button class="back-btn" style="margin-bottom:0;" onclick="showPolicingIndex()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to Handbook</button><button class="back-btn" style="margin-bottom:0;" onclick="showMain()"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button></div>
         <div class="section-header"><div class="section-num-large">09</div><div class="section-header-text"><h2>Driver Levels</h2><p>Classifications · Authorisations · Capabilities</p></div></div>
 
-        <div class="tfc-card"><div class="tfc-num">B</div><div><div class="tfc-name">Basic Driver</div><div class="tfc-desc">Minimum level of driving classification for sKora Police drivers. Not permitted to undertake pursuits. Currently in training for blue light driving.</div></div></div>
+        <div class="tfc-card"><div class="tfc-num">B</div><div><div class="tfc-name">Basic Driver</div><div class="tfc-desc">Minimum level of driving classification for Phoenix Police drivers. Not permitted to undertake pursuits. Currently in training for blue light driving.</div></div></div>
         <div class="tfc-card"><div class="tfc-num">R</div><div><div class="tfc-name">Response Driver</div><div class="tfc-desc">Has completed a response driving course. Authorised to undertake initial phase pursuit and to drive liveried vehicles.</div></div></div>
         <div class="tfc-card"><div class="tfc-num">A</div><div><div class="tfc-name">Advanced Driver</div><div class="tfc-desc">Has completed an advanced driving course. Can undertake initial phase pursuit in marked vehicles. Takes precedence over Response drivers in a pursuit whilst awaiting a T-PAC driver. Can perform PITs and set DRA / PIT timers.</div></div></div>
         <div class="tfc-card"><div class="tfc-num">A+</div><div><div class="tfc-name">Advanced+ Driver</div><div class="tfc-desc">Has completed an advanced driving course at the highest level. Takes precedence over Advanced drivers in a pursuit. Can perform PITs, TPACs, and overrule an Advanced driver's DRA / PIT timers.</div></div></div>
@@ -836,7 +858,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       </div>
     </div>
 
-    <footer><div class="footer-left">sKora PD · Basic Policing Handbook</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
+    <footer><div class="footer-left">Phoenix PD · Basic Policing Handbook</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -873,14 +895,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
           <button class="back-btn" style="margin-bottom:0;" onclick="showMain()"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button>
         </div>
         <div class="section-header"><div class="section-num-large">01</div><div class="section-header-text"><h2>Overview &amp; Purpose</h2><p>Mission · Responsibilities · Operations</p></div></div>
-        <div class="prose"><p>The RPU's focus is to deny criminals use of the roads and surface transport network, and reduce serious injury and road deaths within Skora, whilst also assisting other divisions in their day-to-day duties via the public highways.</p></div>
+        <div class="prose"><p>The RPU's focus is to deny criminals use of the roads and surface transport network, and reduce serious injury and road deaths within Phoenix, whilst also assisting other divisions in their day-to-day duties via the public highways.</p></div>
         <div class="subsection-title">Core Responsibilities</div>
         <div class="rule-block"><p><strong>Emergency Traffic Management (ETM)</strong>Managing traffic during prison transport, court appearances, collisions, and other incidents requiring road control.</p></div>
         <div class="rule-block"><p><strong>High-Speed Pursuit</strong>Pursuit of armed and non-armed criminals on public roads.</p></div>
-        <div class="rule-block"><p><strong>Investigative Policing</strong>Preventing crime on Skora's streets — including street racing and vehicle theft.</p></div>
+        <div class="rule-block"><p><strong>Investigative Policing</strong>Preventing crime on Phoenix's streets — including street racing and vehicle theft.</p></div>
         <div class="info-block">
           <div class="info-label">Operations</div>
-          <p>The division holds initiatives and plans operations in accordance with Skora legislation to more effectively manage the spread of crime in the city, coordinating with appropriate teams to do so.</p>
+          <p>The division holds initiatives and plans operations in accordance with Phoenix legislation to more effectively manage the spread of crime in the city, coordinating with appropriate teams to do so.</p>
         </div>
       </div>
     </div>
@@ -893,7 +915,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
           <button class="back-btn" style="margin-bottom:0;" onclick="showMain()"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button>
         </div>
         <div class="section-header"><div class="section-num-large">02</div><div class="section-header-text"><h2>Driver Levels</h2><p>Classifications · Entitlements · Training</p></div></div>
-        <div class="prose"><p>There are 3 driver levels in the Skora Police Department, each with their own training and additional entitlements. You are shown to be in emergency response when displaying emergency lights and/or using legal exemptions.</p></div>
+        <div class="prose"><p>There are 3 driver levels in the Phoenix Police Department, each with their own training and additional entitlements. You are shown to be in emergency response when displaying emergency lights and/or using legal exemptions.</p></div>
 
         <div class="tfc-card">
           <div class="tfc-num">L1</div>
@@ -1067,7 +1089,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       </div>
     </div>
 
-    <footer><div class="footer-left">sKora PD · Road Policing Unit</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
+    <footer><div class="footer-left">Phoenix PD · Road Policing Unit</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -1117,7 +1139,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       <div class="content-section">
         <div style="display:flex;gap:8px;margin-bottom:1.75rem;"><button class="back-btn" style="margin-bottom:0;" onclick="showARUIndex()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back to ARU Index</button><button class="back-btn" style="margin-bottom:0;" onclick="showMain()"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</button></div>
         <div class="section-header"><div class="section-num-large">02</div><div class="section-header-text"><h2>Uniforms</h2><p>Dress Code · Equipment · Identification</p></div></div>
-        <div class="prose"><p>ARU officers have pre-set outfits arranged in the locker room by <strong>GC-01</strong>. These uniforms are not to be altered in any way. The uniforms are set to a high standard in line with the <strong>sKora Police Department Policy</strong>.</p></div>
+        <div class="prose"><p>ARU officers have pre-set outfits arranged in the locker room by <strong>GC-01</strong>. These uniforms are not to be altered in any way. The uniforms are set to a high standard in line with the <strong>Phoenix Police Department Policy</strong>.</p></div>
         <div class="subsection-title">Uniform Types</div>
         <div class="rule-block"><p><strong>Standard Duty Uniform</strong>For daily job duties on active patrol. Must be worn as provided — no modifications permitted.</p></div>
         <div class="rule-block"><p><strong>Raid Uniform</strong>For use exclusively when Trojan organises and carries out a raid. Only to be worn during sanctioned raid operations.</p></div>
@@ -1132,7 +1154,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         <div class="prose"><p>ARU officers must understand and execute the correct section for each offence. Understanding each section is vital — some offences may or may not involve firearms.</p></div>
         <div class="subsection-title">ARU Sections</div>
         <div class="rule-block"><p><strong>Section 47 — Firearms Act</strong>Firearms, Ammunition &amp; Explosives; includes items relating to the manufacturing of firearms or explosives.</p></div>
-        <div class="info-block"><div class="info-label">Additional Sections</div><p>The remainder of the applicable sections can be found in the <strong>sKora emails under Documents</strong>. All ARU officers must familiarise themselves with these prior to active deployment.</p></div>
+        <div class="info-block"><div class="info-label">Additional Sections</div><p>The remainder of the applicable sections can be found in the <strong>Phoenix emails under Documents</strong>. All ARU officers must familiarise themselves with these prior to active deployment.</p></div>
       </div>
     </div>
 
@@ -1222,7 +1244,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         <div class="prose"><p>Raids are executed per a precise plan written by <strong>T-01</strong> and <strong>T-02</strong>. All divisions hold accountability. Duties are briefed on the day.</p></div>
         <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 01</span><span class="phase-title">CID — Intelligence Gathering</span></div><div class="raid-phase-body"><p>CID goes undercover to document all entrances, exits, and car parks, alongside one or two ARU undercover units. Evidence is then presented to T-01 and T-02.</p></div></div>
         <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 02</span><span class="phase-title">ARU Commanders — Operational Planning</span></div><div class="raid-phase-body"><p>Two teams each with one ARU commander are allocated to different entrances. Both teams breach simultaneously on radio command. Once safe, ARU officers place traffic cones near stashes for CID. ARU commanders arrange RPU transport and brief Frontline on duties.</p></div></div>
-        <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 03</span><span class="phase-title">RPU — Escort &amp; Support</span></div><div class="raid-phase-body"><p>RPU escorts ARU from sKora PD to the destination, pulls back to safe quarters during the operation, assists Frontline after, then escorts ARU back to PD.</p></div></div>
+        <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 03</span><span class="phase-title">RPU — Escort &amp; Support</span></div><div class="raid-phase-body"><p>RPU escorts ARU from Phoenix PD to the destination, pulls back to safe quarters during the operation, assists Frontline after, then escorts ARU back to PD.</p></div></div>
         <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 04</span><span class="phase-title">Frontline — Perimeter &amp; Support</span></div><div class="raid-phase-body"><p>Frontline barricades roads, holds the perimeter, escorts downed officers to SHS, places tents for privacy if SHS is on duty, and removes barricades once the raid concludes.</p></div></div>
         <div class="raid-phase"><div class="raid-phase-header"><span class="phase-tag">Phase 05</span><span class="phase-title">CID — Evidence Collection</span></div><div class="raid-phase-body"><p>CID enters once ARU declares the building safe. CID has exclusive access to storage stations. Seized goods are transferred in unmarked vehicles to PD.</p></div></div>
       </div>
@@ -1239,7 +1261,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       </div>
     </div>
 
-    <footer><div class="footer-left">sKora PD · Armed Response Unit</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
+    <footer><div class="footer-left">Phoenix PD · Armed Response Unit</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -1281,7 +1303,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
 
         <div class="subsection-title">Introduction</div>
         <div class="prose">
-          <p>The purpose of this policy is to describe the duties, functions, and responsibilities of the sKora CID. CID is a professional, well-trained, and specialised division, upholding the responsibility of investigating areas and individuals which greatly concern the community.</p>
+          <p>The purpose of this policy is to describe the duties, functions, and responsibilities of the Phoenix CID. CID is a professional, well-trained, and specialised division, upholding the responsibility of investigating areas and individuals which greatly concern the community.</p>
           <p>It is the policy of the CID to build cases and achieve prosecutions against OCGs and other members that go against community interest and the rule of British law, and evaluate information regarding suspected criminal activity. Cases assigned to detectives shall be monitored and managed by supervisors, with the Chief Inspector responsible for overall case management.</p>
         </div>
 
@@ -1370,7 +1392,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         </div>
         <div class="section-header"><div class="section-num-large">IV</div><div class="section-header-text"><h2>Evidence</h2><p>Collection · Handling · Analysis</p></div></div>
 
-        <div class="prose"><p>Evidence handling will be rehearsed in your training and involves utilising the <strong>sKora Police Forensics Lab</strong>.</p></div>
+        <div class="prose"><p>Evidence handling will be rehearsed in your training and involves utilising the <strong>Phoenix Police Forensics Lab</strong>.</p></div>
         <div class="rule-block"><p><strong>Suitable Gloves</strong>You must wear suitable gloves at all times when handling evidence and change them per crime scene.</p></div>
         <div class="rule-block"><p><strong>Evidence Bags</strong>All evidence must be bagged using an evidence bag before transport.</p></div>
         <div class="rule-block"><p><strong>Forensics Lab</strong>All evidence must be analysed at the forensics lab. It is your duty to handle evidence correctly throughout the entire chain of custody.</p></div>
@@ -1429,7 +1451,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
         </div>
 
         <div class="subsection-title">Standard Uniform — At All Times</div>
-        <div class="rule-block"><p>CID members are expected to wear <strong>suits and ties at all times</strong>. The sKora Police <strong>Lanyard must be worn and visible</strong> at all times.</p></div>
+        <div class="rule-block"><p>CID members are expected to wear <strong>suits and ties at all times</strong>. The Phoenix Police <strong>Lanyard must be worn and visible</strong> at all times.</p></div>
         <div class="info-block">
           <div class="info-label">Professionalism</div>
           <p>CID is a professional department and must look professional at all stages. There are no exceptions to the dress code.</p>
@@ -1481,7 +1503,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:1.
       </div>
     </div>
 
-    <footer><div class="footer-left">sKora PD · Criminal Investigations Division</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
+    <footer><div class="footer-left">Phoenix PD · Criminal Investigations Division</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -1551,20 +1573,20 @@ const COLOUR_KEY = 'skpd_colour';
 function applySettings(theme, colour) {
   const html = document.documentElement;
   html.setAttribute('data-theme', theme);
-  if (!colour || colour === 'blue') {
+  if (!colour || colour === 'orange') {
     html.removeAttribute('data-colour');
   } else {
     html.setAttribute('data-colour', colour);
   }
   document.getElementById('mode-dark')?.classList.toggle('active', theme === 'dark');
   document.getElementById('mode-light')?.classList.toggle('active', theme === 'light');
-  ['blue','bw','red','green','yellow','purple'].forEach(c => {
+  ['orange','blue','bw','red','green','yellow','purple'].forEach(c => {
     document.getElementById('swatch-' + c)?.classList.toggle('active', c === colour);
   });
 }
 
 function setMode(mode) {
-  const colour = localStorage.getItem(COLOUR_KEY) || 'blue';
+  const colour = localStorage.getItem(COLOUR_KEY) || 'orange';
   localStorage.setItem(THEME_KEY, mode);
   applySettings(mode, colour);
 }
@@ -1581,7 +1603,7 @@ function toggleSettings() {
   overlay.classList.toggle('show');
   if (overlay.classList.contains('show')) {
     const theme  = localStorage.getItem(THEME_KEY)  || 'dark';
-    const colour = localStorage.getItem(COLOUR_KEY) || 'blue';
+    const colour = localStorage.getItem(COLOUR_KEY) || 'orange';
     applySettings(theme, colour);
   }
 }
@@ -1592,7 +1614,7 @@ function handleSettingsClick(e) {
 
 function loadSavedSettings() {
   const theme  = localStorage.getItem(THEME_KEY)  || 'dark';
-  const colour = localStorage.getItem(COLOUR_KEY) || 'blue';
+  const colour = localStorage.getItem(COLOUR_KEY) || 'orange';
   applySettings(theme, colour);
 }
 
@@ -2295,7 +2317,7 @@ function injectAdminPages() {
         <div class="login-error" id="pin-error" style="margin-top:.75rem;"></div>
       </div>
     </div>
-    <footer><div class="footer-left">sKora PD · Admin Panel · Restricted</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>`;
+    <footer><div class="footer-left">Phoenix PD · Admin Panel · Restricted</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>`;
   }
 
   // ── ACTIVITY LOGS — only injected for confirmed admins ──
@@ -2341,7 +2363,7 @@ function injectAdminPages() {
         </div>
       </div>
     </div>
-    <footer><div class="footer-left">sKora PD · Activity Logs · Restricted</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>`;
+    <footer><div class="footer-left">Phoenix PD · Activity Logs · Restricted</div><div class="footer-right"><div class="status-dot"></div>Active</div></footer>`;
   }
 }
 
